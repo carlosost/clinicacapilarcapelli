@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Treatments } from "@/components/sections/Treatments";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { Play } from "lucide-react";
 import heroImage from "@/assets/hero-clinic.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,13 +67,13 @@ function Index() {
               {/* CTAs */}
               <div className="hero-animate hero-animate-4 mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href="/agendar"
+                  href="#contato"
                   className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_4px_20px_rgba(30,58,43,0.25)] transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-[0_8px_30px_rgba(30,58,43,0.35)] active:scale-100"
                 >
                   Agendar Consulta
                 </a>
                 <a
-                  href="/tratamentos"
+                  href="#tratamentos"
                   className="group inline-flex items-center gap-2 rounded-lg border border-border bg-white px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-muted hover:shadow-sm active:scale-100"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-olive/10 transition-colors group-hover:bg-olive/20">
@@ -78,6 +81,7 @@ function Index() {
                   </span>
                   Conheça nossa abordagem
                 </a>
+
               </div>
             </div>
 
@@ -147,10 +151,13 @@ function Index() {
         </div>
       </section>
 
-      <Treatments />
-      <Results />
-      <Testimonials />
-      <FAQ />
+      <div id="tratamentos"><Treatments /></div>
+      <div id="resultados"><Results /></div>
+      <div id="depoimentos"><Testimonials /></div>
+      <div id="faq"><FAQ /></div>
+      <ContactForm />
+      <Footer />
     </div>
   );
 }
+
