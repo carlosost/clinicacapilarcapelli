@@ -149,6 +149,8 @@ function Index() {
 
       <Treatments />
       <Results />
+      <Testimonials />
+      <FAQ />
     </div>
   );
 }
