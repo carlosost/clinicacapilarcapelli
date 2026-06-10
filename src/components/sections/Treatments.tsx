@@ -233,7 +233,7 @@ export function Treatments() {
               {/* Footer CTA */}
               <div className="sticky bottom-0 border-t border-border bg-white/95 px-8 py-5 backdrop-blur">
                 <a
-                  href={`/agendar?tratamento=${selected.id}`}
+                  href="#contato"
                   className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground shadow-[0_4px_20px_rgba(30,58,43,0.25)] transition-all duration-300 hover:scale-[1.02] hover:bg-primary/90 hover:shadow-[0_8px_30px_rgba(30,58,43,0.35)]"
                 >
                   Agendar avaliação para este tratamento

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 
+
 const navLinks = [
-  { label: "Tratamentos", href: "/tratamentos" },
-  { label: "Resultados", href: "/resultados" },
-  { label: "A Clínica", href: "/a-clinica" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Tratamentos", href: "#tratamentos" },
+  { label: "Resultados", href: "#resultados" },
+  { label: "A Clínica", href: "#depoimentos" },
+  { label: "FAQ", href: "#faq" },
 ];
+
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,26 +56,22 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="nav-link"
-                activeOptions={{ exact: true }}
-              >
+              <a key={link.href} href={link.href} className="nav-link">
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link
-              to="/agendar"
+            <a
+              href="#contato"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:bg-primary/90 active:scale-100"
             >
               Agendar Avaliação
-            </Link>
+            </a>
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -122,32 +120,31 @@ export function Header() {
         {/* Mobile Nav Links */}
         <nav className="flex flex-col gap-1 px-4 py-6">
           {navLinks.map((link, i) => (
-            <Link
+            <a
               key={link.href}
-              to={link.href}
+              href={link.href}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted hover:text-olive"
-              style={{
-                animationDelay: `${i * 40}ms`,
-              }}
+              style={{ animationDelay: `${i * 40}ms` }}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="mt-auto border-t border-border p-6">
-          <Link
-            to="/agendar"
+          <a
+            href="#contato"
             onClick={() => setMobileOpen(false)}
             className="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
           >
             Agendar Avaliação
-          </Link>
+          </a>
           <p className="mt-3 text-center text-xs text-muted-foreground">
             Avaliação gratuita na primeira visita
           </p>
         </div>
+
       </aside>
     </header>
   );
