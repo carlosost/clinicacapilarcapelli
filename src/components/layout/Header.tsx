@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 
+
 const navLinks = [
   { label: "Tratamentos", href: "#tratamentos" },
   { label: "Resultados", href: "#resultados" },
