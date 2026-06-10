@@ -173,29 +173,31 @@
   }
 }
 
-@utility nav-link {
-  position: relative;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-foreground);
-  transition: color 0.3s ease;
-}
+@layer components {
+  .nav-link {
+    position: relative;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+    transition: color 0.3s ease;
+  }
 
-@utility nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-gold);
-  transition: width 0.3s ease;
-}
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+  }
 
-@utility nav-link:hover {
-  color: var(--color-olive);
-}
+  .nav-link:hover {
+    color: var(--color-olive);
+  }
 
-@utility nav-link:hover::after {
-  width: 100%;
+  .nav-link:hover::after {
+    width: 100%;
+  }
 }
