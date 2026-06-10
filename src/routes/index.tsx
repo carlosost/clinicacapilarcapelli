@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
+import { Treatments } from "@/components/sections/Treatments";
 import { Play } from "lucide-react";
 import heroImage from "@/assets/hero-clinic.jpg";
 
@@ -142,6 +143,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <Treatments />
     </div>
   );
 }
