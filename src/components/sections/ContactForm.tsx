@@ -136,6 +136,30 @@ export function ContactForm() {
                   </Field>
 
                   <Field
+                    label="Unidade mais próxima"
+                    error={errors.unidade}
+                  >
+                    <select
+                      value={form.unidade}
+                      onChange={(e) =>
+                        setForm({ ...form, unidade: e.target.value })
+                      }
+                      className="form-input appearance-none bg-[length:14px] bg-[right_1rem_center] bg-no-repeat pr-10"
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23d4b483' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e\")",
+                      }}
+                    >
+                      <option value="" disabled>
+                        Selecione a unidade
+                      </option>
+                      <option value="rio">Rio de Janeiro — Barra Shopping</option>
+                      <option value="sp">São Paulo — Jardim Paulista</option>
+                      <option value="jf">Juiz de Fora — Cascatinha</option>
+                    </select>
+                  </Field>
+
+                  <Field
                     label="Qual o seu principal incômodo?"
                     error={errors.incomodo}
                   >
