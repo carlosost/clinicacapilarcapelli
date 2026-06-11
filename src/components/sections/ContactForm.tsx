@@ -10,6 +10,9 @@ const schema = z.object({
     .min(10, "WhatsApp inválido")
     .max(20)
     .regex(/^[0-9()+\-\s]+$/, "Apenas números e símbolos válidos"),
+  unidade: z.enum(["rio", "sp", "jf"], {
+    message: "Selecione uma unidade",
+  }),
   incomodo: z.enum(["queda", "calvicie", "barba", "outros"], {
     message: "Selecione uma opção",
   }),
@@ -18,7 +21,7 @@ const schema = z.object({
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 export function ContactForm() {
-  const [form, setForm] = useState({ nome: "", whatsapp: "", incomodo: "" });
+  const [form, setForm] = useState({ nome: "", whatsapp: "", unidade: "", incomodo: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
