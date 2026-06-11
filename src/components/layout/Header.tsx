@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Tratamentos", href: "#tratamentos" },
   { label: "Resultados", href: "#resultados" },
   { label: "A Clínica", href: "#depoimentos" },
+  { label: "Unidades", href: "#unidades" },
   { label: "FAQ", href: "#faq" },
 ];
 
