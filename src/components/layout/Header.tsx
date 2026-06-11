@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Tratamentos", href: "#tratamentos" },
   { label: "Resultados", href: "#resultados" },
   { label: "A Clínica", href: "#depoimentos" },
+  { label: "Unidades", href: "#unidades" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -46,7 +47,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex shrink-0 items-center gap-1">
             <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-              CAPPELI
+              CAPPELLI
             </span>
             <span className="mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:inline">
               CLÍNICA CAPILAR
@@ -65,7 +66,9 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <a
-              href="#contato"
+              href="https://wa.me/5521981680834"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:bg-primary/90 active:scale-100"
             >
               Agendar Avaliação
@@ -114,7 +117,7 @@ export function Header() {
       >
         {/* Mobile Drawer Header */}
         <div className="flex h-[72px] items-center justify-between border-b border-border px-6">
-          <span className="font-display text-lg font-bold tracking-tight">CAPPELI</span>
+          <span className="font-display text-lg font-bold tracking-tight">CAPPELLI</span>
         </div>
 
         {/* Mobile Nav Links */}
@@ -134,7 +137,9 @@ export function Header() {
 
         <div className="mt-auto border-t border-border p-6">
           <a
-            href="#contato"
+            href="https://wa.me/5521981680834"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
           >
