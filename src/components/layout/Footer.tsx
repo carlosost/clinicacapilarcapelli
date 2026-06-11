@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Linkedin, MapPin, Clock, Phone } from "lucide-react";
+import { Instagram, Youtube, Linkedin, MapPin, Clock, Phone, Mail } from "lucide-react";
 
 const columns = [
   {
@@ -40,7 +40,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <div className="flex items-center gap-1">
               <span className="font-display text-2xl font-bold tracking-tight text-graphite">
-                CAPPELI
+                CAPPELLI
               </span>
               <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 CLÍNICA CAPILAR
@@ -111,10 +111,21 @@ export function Footer() {
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-olive" />
                 <a
-                  href="tel:+552130000000"
+                  href="https://wa.me/5521981680834"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-olive"
                 >
-                  +55 (21) 3000-0000
+                  +55 (21) 98168-0834
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-olive" />
+                <a
+                  href="mailto:contato@clinicacappelli.com.br"
+                  className="transition-colors hover:text-olive"
+                >
+                  contato@clinicacappelli.com.br
                 </a>
               </li>
             </ul>
@@ -123,27 +134,25 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col items-center justify-between gap-6 border-t border-border py-8 sm:flex-row">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Clínica Cappelli. Todos os direitos
-            reservados.{" "}
-            <a href="#" className="ml-1 underline-offset-4 hover:text-olive hover:underline">
-              Política de Privacidade
-            </a>
-            <span className="mx-2 text-border">·</span>
-            <a href="#" className="underline-offset-4 hover:text-olive hover:underline">
-              Termos de Uso
-            </a>
+          <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">
+            Copyright © 2026 Clínica Cappelli. Todos os direitos reservados. Cappelli Transplante Ltda | CNPJ 45.279.669/0001-00.{" "}
+            <a href="#" className="underline-offset-4 hover:text-olive hover:underline">Termos de Uso</a>
+            <span className="mx-1.5 text-border">·</span>
+            <a href="#" className="underline-offset-4 hover:text-olive hover:underline">Políticas de Privacidade</a>.{" "}
+            Imagens e conteúdos estritamente informativos em conformidade com as normas do CFM.
           </p>
 
           <div className="flex items-center gap-2">
             {[
-              { icon: Instagram, label: "Instagram", href: "#" },
+              { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/clinicacappelli/" },
               { icon: Youtube, label: "YouTube", href: "#" },
               { icon: Linkedin, label: "LinkedIn", href: "#" },
             ].map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
                 href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={label}
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-graphite-light transition-all duration-300 hover:-translate-y-0.5 hover:border-olive hover:text-olive"
               >
