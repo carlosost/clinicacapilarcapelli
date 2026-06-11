@@ -93,11 +93,11 @@ export function Footer() {
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-olive" />
                 <span className="leading-[1.65]">
-                  Av. Ataulfo de Paiva, 1.180 — Sala 802
+                  Av. das Américas, 4.430 — Sala 301
                   <br />
-                  Leblon, Rio de Janeiro / RJ
+                  Barra da Tijuca, Rio de Janeiro / RJ
                   <br />
-                  CEP 22440-035
+                  CEP 22640-102
                 </span>
               </li>
               <li className="flex gap-3">
