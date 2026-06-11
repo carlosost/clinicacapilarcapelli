@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Treatments } from "@/components/sections/Treatments";
+import { Unidades } from "@/components/sections/Unidades";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
