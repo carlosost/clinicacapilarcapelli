@@ -47,7 +47,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex shrink-0 items-center gap-1">
             <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-              CAPPELI
+              CAPPELLI
             </span>
             <span className="mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:inline">
               CLÍNICA CAPILAR
@@ -66,7 +66,9 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <a
-              href="#contato"
+              href="https://wa.me/5521981680834"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:bg-primary/90 active:scale-100"
             >
               Agendar Avaliação
