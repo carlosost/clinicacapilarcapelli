@@ -117,7 +117,7 @@ export function Header() {
       >
         {/* Mobile Drawer Header */}
         <div className="flex h-[72px] items-center justify-between border-b border-border px-6">
-          <span className="font-display text-lg font-bold tracking-tight">CAPPELI</span>
+          <span className="font-display text-lg font-bold tracking-tight">CAPPELLI</span>
         </div>
 
         {/* Mobile Nav Links */}
@@ -137,7 +137,9 @@ export function Header() {
 
         <div className="mt-auto border-t border-border p-6">
           <a
-            href="#contato"
+            href="https://wa.me/5521981680834"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
           >
