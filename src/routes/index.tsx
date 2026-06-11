@@ -153,10 +153,10 @@ function Index() {
       </section>
 
       <div id="tratamentos"><Treatments /></div>
-      <Unidades />
       <div id="resultados"><Results /></div>
       <div id="depoimentos"><Testimonials /></div>
       <div id="faq"><FAQ /></div>
+      <Unidades />
       <ContactForm />
       <Footer />
     </div>
