@@ -170,7 +170,18 @@ export function Hero() {
             : lifeRatio > 0.8
               ? Math.max(0, 1 - (lifeRatio - 0.8) / 0.2)
               : 1;
-        const alpha = p.baseAlpha * fade;
+
+        // Máscara de legibilidade — atenua partículas na zona de texto
+        // (faixa horizontal central onde título/subtítulo vivem)
+        const nx = p.x / width;
+        const ny = p.y / height;
+        const textCenterY = 0.5;
+        const textBandY = Math.max(0, 1 - Math.abs(ny - textCenterY) / 0.32);
+        const textBandX = Math.max(0, 1 - Math.abs(nx - 0.5) / 0.45);
+        const textMask = textBandX * textBandY; // 0..1 dentro da zona de texto
+        const readability = 1 - textMask * 0.78;
+
+        const alpha = p.baseAlpha * fade * readability;
 
         const colors = palette[p.hue];
         const color = colors[i % colors.length].replace(
