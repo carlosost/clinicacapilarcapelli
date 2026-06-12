@@ -250,18 +250,27 @@ export function Hero() {
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full"
       />
 
-      {/* Vinheta + gradiente para legibilidade */}
+      {/* Overlay 1 — gradiente vertical de contraste sobre o canvas */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(20,30,25,0.35)_0%,rgba(20,30,25,0.75)_60%,rgba(20,30,25,0.92)_100%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(26,26,26,0.85)_0%,rgba(26,26,26,0.55)_38%,rgba(26,26,26,0.35)_62%,rgba(26,26,26,0.7)_100%)]"
       />
+
+      {/* Overlay 2 — vinheta radial à esquerda, abrindo espaço de leitura */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-graphite"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_30%_45%,rgba(20,30,25,0.55)_0%,rgba(20,30,25,0.25)_45%,transparent_75%)]"
       />
+
+      {/* Overlay 3 — fade para a próxima seção */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-b from-transparent to-graphite"
+      />
+
 
       {/* Camada 2 — Conteúdo */}
       <div className="relative z-10 mx-auto w-full max-w-5xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-28 lg:px-8">
