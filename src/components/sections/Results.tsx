@@ -386,6 +386,6 @@ export function Results() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
