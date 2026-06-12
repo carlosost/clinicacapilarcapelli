@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Treatments } from "@/components/sections/Treatments";
 import { Unidades } from "@/components/sections/Unidades";
 import { Results } from "@/components/sections/Results";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { JourneyFAQ } from "@/components/sections/JourneyFAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
 
@@ -30,27 +29,10 @@ function Index() {
 
       <Hero />
 
-      {/* Trusted By / Social Proof Strip */}
-      <section className="border-y border-border bg-white py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-6 text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-            Referência em tratamento capilar
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-40 grayscale">
-            {["Revista Saúde", "Estética In", "Medical Hair", "Tricologia BR", "Forbes Health"].map((name) => (
-              <span key={name} className="font-display text-lg font-semibold text-foreground">
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <div id="resultados"><Results /></div>
+      <div id="jornada"><JourneyFAQ /></div>
       <div id="tratamentos"><Treatments /></div>
       <div id="unidades"><Unidades /></div>
-      <div id="jornada"><JourneyFAQ /></div>
-      <div id="depoimentos"><Testimonials /></div>
       <ContactForm />
       <Footer />
     </div>

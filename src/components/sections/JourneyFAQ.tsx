@@ -120,7 +120,7 @@ export function JourneyFAQ() {
   const current = phases[active];
 
   return (
-    <section id="jornada" className="bg-cream py-24 lg:py-32">
+    <motion.section id="jornada" className="bg-cream py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold tracking-[0.2em] text-olive uppercase">
@@ -308,6 +308,6 @@ export function JourneyFAQ() {
           </Accordion>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
