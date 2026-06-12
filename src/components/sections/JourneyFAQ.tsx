@@ -308,6 +308,6 @@ export function JourneyFAQ() {
           </Accordion>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
