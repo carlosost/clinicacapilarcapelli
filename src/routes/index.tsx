@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
 import { Treatments } from "@/components/sections/Treatments";
 import { Unidades } from "@/components/sections/Unidades";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
-import { Play } from "lucide-react";
-import heroImage from "@/assets/hero-clinic.jpg";
+
 
 
 export const Route = createFileRoute("/")({
