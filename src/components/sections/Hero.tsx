@@ -67,10 +67,10 @@ export function Hero() {
     };
 
     const spawn = (initial = false): Particle => {
-      // Origem deslocada do centro para a direita (assimetria)
-      const originX = width * (0.45 + Math.random() * 0.35);
-      const originY = height * (0.35 + Math.random() * 0.4);
-      const spread = Math.min(width, height) * 0.25;
+      // Origem fortemente deslocada para a direita-baixo (abraça o texto)
+      const originX = width * (0.62 + Math.random() * 0.35);
+      const originY = height * (0.55 + Math.random() * 0.45);
+      const spread = Math.min(width, height) * 0.3;
       const angle = Math.random() * Math.PI * 2;
       const radius = Math.random() * spread;
       const x = initial
@@ -81,7 +81,7 @@ export function Hero() {
         : originY + Math.sin(angle) * radius * 0.7;
 
       const hue: Particle["hue"] = Math.random() > 0.45 ? "gold" : "cream";
-      const r = Math.random() * 1.6 + 0.4;
+      const r = Math.random() * 1.4 + 0.3;
       const maxLife = 280 + Math.random() * 420;
       return {
         x,
@@ -92,7 +92,7 @@ export function Hero() {
         life: initial ? Math.random() * maxLife : 0,
         maxLife,
         hue,
-        baseAlpha: 0.25 + Math.random() * 0.55,
+        baseAlpha: 0.2 + Math.random() * 0.5,
       };
     };
 
