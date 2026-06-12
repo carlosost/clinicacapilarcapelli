@@ -6,7 +6,7 @@ import { Treatments } from "@/components/sections/Treatments";
 import { Unidades } from "@/components/sections/Unidades";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
+import { JourneyFAQ } from "@/components/sections/JourneyFAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 
@@ -49,7 +49,7 @@ function Index() {
       <div id="resultados"><Results /></div>
       <div id="tratamentos"><Treatments /></div>
       <div id="unidades"><Unidades /></div>
-      <div id="faq"><FAQ /></div>
+      <div id="jornada"><JourneyFAQ /></div>
       <div id="depoimentos"><Testimonials /></div>
       <ContactForm />
       <Footer />
