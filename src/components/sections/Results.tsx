@@ -4,32 +4,6 @@ import { ChevronLeft, ChevronRight, GripVertical } from "lucide-react";
 import beforeImg from "@/assets/before-fue.jpg";
 import afterImg from "@/assets/after-fue.jpg";
 
-const phases = [
-  {
-    icon: Stethoscope,
-    title: "Consulta & Mapeamento",
-    description: "Diagnóstico tricológico e análise genética personalizada.",
-    time: "Dia 0",
-  },
-  {
-    icon: Scissors,
-    title: "Dia do Procedimento",
-    description: "Transplante FUE com extração unitária de precisão.",
-    time: "Mês 1",
-  },
-  {
-    icon: Activity,
-    title: "Acompanhamento 3 Meses",
-    description: "Início do crescimento ativo e ajuste do protocolo regenerativo.",
-    time: "Mês 3",
-  },
-  {
-    icon: Sparkles,
-    title: "Resultado Final",
-    description: "Densidade total e naturalidade do fio consolidados.",
-    time: "Mês 9",
-  },
-];
 
 type Case = {
   code: string;
