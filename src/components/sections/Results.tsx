@@ -1,14 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ChevronLeft,
-  ChevronRight,
-  GripVertical,
-  Stethoscope,
-  Scissors,
-  Activity,
-  Sparkles,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, GripVertical } from "lucide-react";
 import beforeImg from "@/assets/before-fue.jpg";
 import afterImg from "@/assets/after-fue.jpg";
 
