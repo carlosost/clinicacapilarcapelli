@@ -313,44 +313,6 @@ export function Results() {
             </button>
           </div>
         </div>
-
-        {/* Timeline */}
-        <div className="mt-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold tracking-[0.2em] text-olive uppercase">
-              A Jornada do Paciente
-            </span>
-            <h3 className="mt-4 font-display text-3xl font-bold tracking-tight text-graphite sm:text-4xl">
-              Da consulta ao resultado final
-            </h3>
-          </div>
-
-          <div className="relative mt-14">
-            <div className="absolute left-0 right-0 top-6 hidden h-px bg-border md:block" />
-            <div className="grid gap-10 md:grid-cols-4 md:gap-6">
-              {phases.map((phase, idx) => {
-                const Icon = phase.icon;
-                return (
-                  <div key={phase.title} className="group relative text-center">
-                    <div className="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-border bg-white shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:border-olive/40 group-hover:bg-olive group-hover:shadow-[0_0_0_8px_rgba(30,58,43,0.08)]">
-                      <Icon className="h-5 w-5 text-olive transition-colors duration-500 group-hover:text-white" />
-                    </div>
-
-                    <span className="mt-5 inline-block text-[11px] font-semibold tracking-[0.18em] text-gold uppercase">
-                      {phase.time}
-                    </span>
-                    <h4 className="mt-2 font-display text-lg font-bold tracking-tight text-graphite transition-colors group-hover:text-olive">
-                      {idx + 1}. {phase.title}
-                    </h4>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {phase.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
       </div>
     </motion.section>
   );
