@@ -112,21 +112,21 @@ export function Unidades() {
 
           {/* RIGHT — Dynamic Panel */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl bg-graphite p-8 shadow-[0_20px_60px_-20px_rgba(30,58,43,0.4)] sm:p-12 lg:min-h-[480px]">
+            <div className="relative overflow-hidden rounded-3xl bg-olive-dark p-8 shadow-[0_20px_60px_-20px_rgba(30,58,43,0.4)] sm:p-12 lg:min-h-[480px]">
               {/* Decorative accent */}
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-olive/10 blur-3xl" />
-              <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-olive/[0.06] blur-3xl" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cream/10 blur-3xl" />
+              <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-cream/[0.06] blur-3xl" />
 
               <div
                 key={active.id}
                 className="relative flex h-full flex-col animate-fade-in"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-olive/15 backdrop-blur-sm">
-                    <MapPin className="h-5 w-5 text-olive" strokeWidth={1.5} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream/15 backdrop-blur-sm">
+                    <MapPin className="h-5 w-5 text-graphite" strokeWidth={1.5} />
                   </div>
                   {active.badge && (
-                    <span className="rounded-full border border-olive/30 bg-olive/10 px-3 py-1 text-[10px] font-semibold tracking-wider text-olive uppercase">
+                    <span className="rounded-full border border-graphite/30 bg-graphite/10 px-3 py-1 text-[10px] font-semibold tracking-wider text-graphite uppercase">
                       {active.badge}
                     </span>
                   )}
@@ -134,18 +134,18 @@ export function Unidades() {
 
                 <h3 className="mt-8 font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">
                   {active.city}
-                  <span className="text-olive">, {active.state}</span>
+                  <span className="text-graphite">, {active.state}</span>
                 </h3>
-                <p className="mt-2 text-base font-medium text-olive">
+                <p className="mt-2 text-base font-medium text-graphite">
                   {active.neighborhood}
                 </p>
 
                 {/* Divider */}
-                <div className="my-8 h-px w-16 bg-olive/40" />
+                <div className="my-8 h-px w-16 bg-graphite/20" />
 
                 <div className="space-y-5">
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.18em] text-cream/50 uppercase">
+                    <p className="text-[11px] font-semibold tracking-[0.18em] text-graphite/60 uppercase">
                       Endereço
                     </p>
                     <p className="mt-1.5 text-lg leading-relaxed text-cream/90">
@@ -154,7 +154,7 @@ export function Unidades() {
                   </div>
 
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.18em] text-cream/50 uppercase">
+                    <p className="text-[11px] font-semibold tracking-[0.18em] text-graphite/60 uppercase">
                       Referência
                     </p>
                     <p className="mt-1.5 text-base leading-relaxed text-cream/80">
@@ -168,7 +168,7 @@ export function Unidades() {
                   href={active.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-10 inline-flex w-fit items-center justify-center gap-2.5 rounded-full border border-olive/40 bg-olive/10 px-7 py-3.5 text-sm font-semibold text-cream backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-olive hover:bg-olive/20 active:scale-100 sm:mt-12"
+                  className="mt-10 inline-flex w-fit items-center justify-center gap-2.5 rounded-full border border-cream/40 bg-cream/10 px-7 py-3.5 text-sm font-semibold text-cream backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-cream hover:bg-cream/20 active:scale-100 sm:mt-12"
                 >
                   <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
                   {active.cta}
