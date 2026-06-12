@@ -46,10 +46,18 @@ export function Header() {
         <div className="flex h-[72px] items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex shrink-0 items-center gap-1">
-            <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+            <span
+              className={`font-display text-xl font-bold tracking-tight transition-colors duration-300 sm:text-2xl ${
+                scrolled ? "text-foreground" : "text-cream"
+              }`}
+            >
               CAPPELLI
             </span>
-            <span className="mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:inline">
+            <span
+              className={`mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] uppercase transition-colors duration-300 sm:inline ${
+                scrolled ? "text-muted-foreground" : "text-cream/70"
+              }`}
+            >
               CLÍNICA CAPILAR
             </span>
           </Link>
@@ -57,7 +65,13 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link">
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link transition-colors duration-300 ${
+                  scrolled ? "text-foreground hover:text-olive" : "text-cream hover:text-gold"
+                }`}
+              >
                 {link.label}
               </a>
             ))}
@@ -79,24 +93,26 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors hover:bg-muted md:hidden"
+            className={`relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors md:hidden ${
+              scrolled ? "hover:bg-muted" : "hover:bg-white/10"
+            }`}
             aria-label="Menu"
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block h-[2px] w-5 rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "translate-y-[7px] rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "translate-y-[7px] rotate-45" : ""}`}
             />
             <span
-              className={`block h-[2px] rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"
-              }`}
+              className={`block h-[2px] rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"}`}
             />
             <span
-              className={`block h-[2px] w-5 rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
             />
           </button>
         </div>
