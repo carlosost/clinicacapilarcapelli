@@ -93,24 +93,26 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors hover:bg-muted md:hidden"
+            className={`relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors md:hidden ${
+              scrolled ? "hover:bg-muted" : "hover:bg-white/10"
+            }`}
             aria-label="Menu"
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block h-[2px] w-5 rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "translate-y-[7px] rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "translate-y-[7px] rotate-45" : ""}`}
             />
             <span
-              className={`block h-[2px] rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"
-              }`}
+              className={`block h-[2px] rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"}`}
             />
             <span
-              className={`block h-[2px] w-5 rounded-full bg-foreground transition-all duration-300 ${
-                mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
+              } ${mobileOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
             />
           </button>
         </div>
