@@ -6,7 +6,7 @@ import { Treatments } from "@/components/sections/Treatments";
 import { Unidades } from "@/components/sections/Unidades";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
+import { JourneyFAQ } from "@/components/sections/JourneyFAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 
