@@ -46,11 +46,11 @@ function Index() {
         </div>
       </section>
 
-      <div id="tratamentos"><Treatments /></div>
       <div id="resultados"><Results /></div>
-      <div id="depoimentos"><Testimonials /></div>
+      <div id="tratamentos"><Treatments /></div>
+      <div id="unidades"><Unidades /></div>
       <div id="faq"><FAQ /></div>
-      <Unidades />
+      <div id="depoimentos"><Testimonials /></div>
       <ContactForm />
       <Footer />
     </div>
