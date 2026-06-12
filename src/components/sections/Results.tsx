@@ -180,7 +180,7 @@ export function Results() {
   return (
     <motion.section
       id="resultados"
-      className="bg-cream py-28 lg:py-36"
+      className="bg-cream pt-28 pb-16 lg:pt-36 lg:pb-20"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
