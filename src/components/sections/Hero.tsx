@@ -67,10 +67,10 @@ export function Hero() {
     };
 
     const spawn = (initial = false): Particle => {
-      // Origem deslocada do centro para a direita (assimetria)
-      const originX = width * (0.45 + Math.random() * 0.35);
-      const originY = height * (0.35 + Math.random() * 0.4);
-      const spread = Math.min(width, height) * 0.25;
+      // Origem fortemente deslocada para a direita-baixo (abraça o texto)
+      const originX = width * (0.62 + Math.random() * 0.35);
+      const originY = height * (0.55 + Math.random() * 0.45);
+      const spread = Math.min(width, height) * 0.3;
       const angle = Math.random() * Math.PI * 2;
       const radius = Math.random() * spread;
       const x = initial
@@ -81,7 +81,7 @@ export function Hero() {
         : originY + Math.sin(angle) * radius * 0.7;
 
       const hue: Particle["hue"] = Math.random() > 0.45 ? "gold" : "cream";
-      const r = Math.random() * 1.6 + 0.4;
+      const r = Math.random() * 1.4 + 0.3;
       const maxLife = 280 + Math.random() * 420;
       return {
         x,
@@ -92,7 +92,7 @@ export function Hero() {
         life: initial ? Math.random() * maxLife : 0,
         maxLife,
         hue,
-        baseAlpha: 0.25 + Math.random() * 0.55,
+        baseAlpha: 0.2 + Math.random() * 0.5,
       };
     };
 
@@ -170,7 +170,18 @@ export function Hero() {
             : lifeRatio > 0.8
               ? Math.max(0, 1 - (lifeRatio - 0.8) / 0.2)
               : 1;
-        const alpha = p.baseAlpha * fade;
+
+        // Máscara de legibilidade — atenua partículas na zona de texto
+        // (faixa horizontal central onde título/subtítulo vivem)
+        const nx = p.x / width;
+        const ny = p.y / height;
+        const textCenterY = 0.5;
+        const textBandY = Math.max(0, 1 - Math.abs(ny - textCenterY) / 0.32);
+        const textBandX = Math.max(0, 1 - Math.abs(nx - 0.5) / 0.45);
+        const textMask = textBandX * textBandY; // 0..1 dentro da zona de texto
+        const readability = 1 - textMask * 0.78;
+
+        const alpha = p.baseAlpha * fade * readability;
 
         const colors = palette[p.hue];
         const color = colors[i % colors.length].replace(
@@ -239,18 +250,27 @@ export function Hero() {
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full"
       />
 
-      {/* Vinheta + gradiente para legibilidade */}
+      {/* Overlay 1 — gradiente vertical de contraste sobre o canvas */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(20,30,25,0.35)_0%,rgba(20,30,25,0.75)_60%,rgba(20,30,25,0.92)_100%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(26,26,26,0.85)_0%,rgba(26,26,26,0.55)_38%,rgba(26,26,26,0.35)_62%,rgba(26,26,26,0.7)_100%)]"
       />
+
+      {/* Overlay 2 — vinheta radial à esquerda, abrindo espaço de leitura */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-graphite"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_30%_45%,rgba(20,30,25,0.55)_0%,rgba(20,30,25,0.25)_45%,transparent_75%)]"
       />
+
+      {/* Overlay 3 — fade para a próxima seção */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-b from-transparent to-graphite"
+      />
+
 
       {/* Camada 2 — Conteúdo */}
       <div className="relative z-10 mx-auto w-full max-w-5xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-28 lg:px-8">
