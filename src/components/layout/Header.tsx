@@ -65,7 +65,13 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link">
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link transition-colors duration-300 ${
+                  scrolled ? "text-foreground hover:text-olive" : "text-cream hover:text-gold"
+                }`}
+              >
                 {link.label}
               </a>
             ))}
