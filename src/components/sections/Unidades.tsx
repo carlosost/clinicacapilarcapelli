@@ -64,8 +64,8 @@ export function Unidades() {
               Presença Estratégica
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-graphite-light">
-              Três endereços selecionados para entregar a mesma experiência
-              premium da Cappelli, onde quer que você esteja.
+              Três endereços selecionados para entregar a mesma experiência premium da Cappelli,
+              onde quer que você esteja.
             </p>
 
             {/* Vertical Tabs */}
