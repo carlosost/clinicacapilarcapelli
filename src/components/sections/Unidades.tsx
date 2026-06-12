@@ -64,8 +64,8 @@ export function Unidades() {
               Presença Estratégica
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-graphite-light">
-              Três endereços selecionados para entregar a mesma experiência
-              premium da Cappelli, onde quer que você esteja.
+              Três endereços selecionados para entregar a mesma experiência premium da Cappelli,
+              onde quer que você esteja.
             </p>
 
             {/* Vertical Tabs */}
@@ -117,16 +117,13 @@ export function Unidades() {
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cream/10 blur-3xl" />
               <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-cream/[0.06] blur-3xl" />
 
-              <div
-                key={active.id}
-                className="relative flex h-full flex-col animate-fade-in"
-              >
+              <div key={active.id} className="relative flex h-full flex-col animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream/15 backdrop-blur-sm">
-                    <MapPin className="h-5 w-5 text-graphite" strokeWidth={1.5} />
+                    <MapPin className="h-5 w-5 text-gold" strokeWidth={1.5} />
                   </div>
                   {active.badge && (
-                    <span className="rounded-full border border-graphite/30 bg-graphite/10 px-3 py-1 text-[10px] font-semibold tracking-wider text-graphite uppercase">
+                    <span className="rounded-full border border-gold/35 bg-gold/10 px-3 py-1 text-[10px] font-semibold tracking-wider text-gold uppercase">
                       {active.badge}
                     </span>
                   )}
@@ -134,27 +131,23 @@ export function Unidades() {
 
                 <h3 className="mt-8 font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">
                   {active.city}
-                  <span className="text-graphite">, {active.state}</span>
+                  <span className="text-gold">, {active.state}</span>
                 </h3>
-                <p className="mt-2 text-base font-medium text-graphite">
-                  {active.neighborhood}
-                </p>
+                <p className="mt-2 text-base font-medium text-gold-muted">{active.neighborhood}</p>
 
                 {/* Divider */}
-                <div className="my-8 h-px w-16 bg-graphite/20" />
+                <div className="my-8 h-px w-16 bg-gold/30" />
 
                 <div className="space-y-5">
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.18em] text-graphite/60 uppercase">
+                    <p className="text-[11px] font-semibold tracking-[0.18em] text-gold/75 uppercase">
                       Endereço
                     </p>
-                    <p className="mt-1.5 text-lg leading-relaxed text-cream/90">
-                      {active.address}
-                    </p>
+                    <p className="mt-1.5 text-lg leading-relaxed text-cream/90">{active.address}</p>
                   </div>
 
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.18em] text-graphite/60 uppercase">
+                    <p className="text-[11px] font-semibold tracking-[0.18em] text-gold/75 uppercase">
                       Referência
                     </p>
                     <p className="mt-1.5 text-base leading-relaxed text-cream/80">
