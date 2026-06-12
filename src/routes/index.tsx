@@ -49,7 +49,7 @@ function Index() {
       <div id="resultados"><Results /></div>
       <div id="tratamentos"><Treatments /></div>
       <div id="unidades"><Unidades /></div>
-      <div id="faq"><FAQ /></div>
+      <div id="jornada"><JourneyFAQ /></div>
       <div id="depoimentos"><Testimonials /></div>
       <ContactForm />
       <Footer />
