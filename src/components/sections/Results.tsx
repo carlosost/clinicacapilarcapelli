@@ -135,16 +135,19 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
   return (
     <div
       ref={containerRef}
-      className="relative aspect-square w-full select-none overflow-hidden rounded-2xl bg-graphite shadow-[0_20px_60px_-20px_rgba(30,58,43,0.35)] lg:aspect-[4/3]"
+      className="relative aspect-square w-full select-none overflow-hidden rounded-2xl bg-graphite shadow-[0_20px_60px_-20px_rgba(30,58,43,0.35)] lg:aspect-[4/3] [touch-action:pan-y]"
       onMouseDown={(e) => {
         draggingRef.current = true;
         updateFromClientX(e.clientX);
       }}
       onTouchStart={(e) => {
+        e.stopPropagation();
         draggingRef.current = true;
         updateFromClientX(e.touches[0].clientX);
       }}
+      onTouchMove={(e) => e.stopPropagation()}
     >
+
       <img
         src={after}
         alt="Depois do tratamento capilar"

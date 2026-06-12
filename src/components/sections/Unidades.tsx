@@ -68,35 +68,36 @@ export function Unidades() {
               onde quer que você esteja.
             </p>
 
-            {/* Vertical Tabs */}
-            <ul className="mt-10 flex flex-col">
+            {/* Tabs: horizontal scroll on mobile, vertical on lg */}
+            <ul className="mt-8 -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 scroll-smooth snap-x snap-mandatory lg:mx-0 lg:mt-10 lg:flex-col lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {units.map((u) => {
                 const isActive = u.id === activeId;
                 return (
-                  <li key={u.id}>
+                  <li key={u.id} className="shrink-0 snap-start lg:shrink lg:snap-align-none">
                     <button
                       type="button"
                       onClick={() => setActiveId(u.id)}
-                      className={`group relative flex w-full items-center gap-4 border-l-2 py-5 pl-6 pr-3 text-left transition-all duration-300 ${
+                      aria-pressed={isActive}
+                      className={`group relative flex w-full items-center gap-4 rounded-full border px-5 py-3 text-left transition-all duration-300 lg:rounded-none lg:border-0 lg:border-l-2 lg:py-5 lg:pl-6 lg:pr-3 ${
                         isActive
-                          ? "border-olive bg-olive/[0.04]"
-                          : "border-border/40 opacity-50 hover:opacity-100 hover:border-olive/40"
+                          ? "border-olive bg-olive/[0.06] lg:bg-olive/[0.04]"
+                          : "border-border/50 opacity-70 hover:opacity-100 hover:border-olive/40 lg:opacity-50"
                       }`}
                     >
                       <div className="flex-1 min-w-0">
                         <p
-                          className={`font-display text-lg font-semibold tracking-tight transition-colors ${
+                          className={`font-display text-sm font-semibold tracking-tight transition-colors lg:text-lg ${
                             isActive ? "text-graphite" : "text-graphite-light"
                           }`}
                         >
                           {u.city} - {u.state}
                         </p>
-                        <p className="mt-0.5 text-xs font-medium tracking-wide text-graphite-light">
+                        <p className="mt-0.5 hidden text-xs font-medium tracking-wide text-graphite-light lg:block">
                           {u.neighborhood}
                         </p>
                       </div>
                       <ArrowRight
-                        className={`h-4 w-4 shrink-0 transition-all duration-300 ${
+                        className={`hidden h-4 w-4 shrink-0 transition-all duration-300 lg:block ${
                           isActive
                             ? "translate-x-0 text-olive opacity-100"
                             : "-translate-x-1 text-graphite-light opacity-0 group-hover:translate-x-0 group-hover:opacity-60"
