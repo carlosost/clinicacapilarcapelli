@@ -46,10 +46,18 @@ export function Header() {
         <div className="flex h-[72px] items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex shrink-0 items-center gap-1">
-            <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+            <span
+              className={`font-display text-xl font-bold tracking-tight transition-colors duration-300 sm:text-2xl ${
+                scrolled ? "text-foreground" : "text-cream"
+              }`}
+            >
               CAPPELLI
             </span>
-            <span className="mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:inline">
+            <span
+              className={`mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] uppercase transition-colors duration-300 sm:inline ${
+                scrolled ? "text-muted-foreground" : "text-cream/70"
+              }`}
+            >
               CLÍNICA CAPILAR
             </span>
           </Link>
