@@ -272,7 +272,7 @@
 /* Scroll Snapping — full-section page lock (desktop only) */
 @media (min-width: 768px) {
   html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
   }
 }
