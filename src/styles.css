@@ -163,12 +163,15 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    background-color: var(--color-graphite);
+    overscroll-behavior-y: none;
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: var(--color-graphite);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    overscroll-behavior-y: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
