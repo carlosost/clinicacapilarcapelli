@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 
-
 const navLinks = [
-  { label: "Tratamentos", href: "#tratamentos" },
   { label: "Resultados", href: "#resultados" },
-  { label: "A Clínica", href: "#depoimentos" },
+  { label: "Tratamentos", href: "#tratamentos" },
   { label: "Unidades", href: "#unidades" },
-  { label: "FAQ", href: "#faq" },
 ];
-
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,7 +74,6 @@ export function Header() {
               Agendar Avaliação
             </a>
           </div>
-
 
           {/* Mobile Menu Button */}
           <button
@@ -149,11 +144,8 @@ export function Header() {
           >
             Agendar Avaliação
           </a>
-          <p className="mt-3 text-center text-xs text-muted-foreground">
-            Avaliação gratuita na primeira visita
-          </p>
+          <p className="mt-3 text-center text-xs text-muted-foreground">Avaliação gratuita na primeira visita</p>
         </div>
-
       </aside>
     </header>
   );
