@@ -32,7 +32,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-cream">
+    <footer className="border-t border-border bg-cream md:snap-start">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top */}
         <div className="grid gap-12 py-20 lg:grid-cols-12">

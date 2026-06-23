@@ -47,7 +47,7 @@ export function Unidades() {
   const active = units.find((u) => u.id === activeId)!;
 
   return (
-    <section id="unidades" className="bg-white py-20 sm:py-28">
+    <section id="unidades" className="bg-white py-20 sm:py-28 md:h-screen md:snap-start md:flex md:flex-col md:justify-center">
       <div
         ref={ref}
         className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-700 ease-out ${
