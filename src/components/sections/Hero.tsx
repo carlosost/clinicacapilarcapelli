@@ -244,7 +244,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate flex min-h-[92vh] items-center overflow-hidden bg-graphite"
+      className="relative isolate flex min-h-[92vh] md:h-screen md:snap-start items-center overflow-hidden bg-graphite"
     >
       {/* Camada 1 — Canvas animado */}
       <canvas
