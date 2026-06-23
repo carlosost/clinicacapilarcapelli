@@ -38,7 +38,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 backdrop-blur-md border-b border-border shadow-[0_1px_12px_rgba(0,0,0,0.04)]"
+          ? "bg-graphite/85 backdrop-blur-md border-b border-white/10 shadow-[0_1px_12px_rgba(0,0,0,0.35)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -46,18 +46,10 @@ export function Header() {
         <div className="flex h-[72px] items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex shrink-0 items-center gap-1">
-            <span
-              className={`font-display text-xl font-bold tracking-tight transition-colors duration-300 sm:text-2xl ${
-                scrolled ? "text-foreground" : "text-cream"
-              }`}
-            >
+            <span className="font-display text-xl font-bold tracking-tight text-cream transition-colors duration-300 sm:text-2xl">
               CAPPELLI
             </span>
-            <span
-              className={`mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] uppercase transition-colors duration-300 sm:inline ${
-                scrolled ? "text-muted-foreground" : "text-cream/70"
-              }`}
-            >
+            <span className="mt-1 hidden text-[10px] font-sans font-semibold tracking-[0.2em] uppercase text-cream/70 transition-colors duration-300 sm:inline">
               CLÍNICA CAPILAR
             </span>
           </Link>
@@ -68,9 +60,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`nav-link transition-colors duration-300 ${
-                  scrolled ? "text-foreground hover:text-olive" : "text-cream hover:text-gold"
-                }`}
+                className="nav-link text-cream transition-colors duration-300 hover:text-gold"
               >
                 {link.label}
               </a>
@@ -93,26 +83,24 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors md:hidden ${
-              scrolled ? "hover:bg-muted" : "hover:bg-white/10"
-            }`}
+            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-lg transition-colors hover:bg-white/10 md:hidden"
             aria-label="Menu"
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
-                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
-              } ${mobileOpen ? "translate-y-[7px] rotate-45" : ""}`}
+              className={`block h-[2px] w-5 rounded-full bg-cream transition-all duration-300 ${
+                mobileOpen ? "translate-y-[7px] rotate-45" : ""
+              }`}
             />
             <span
-              className={`block h-[2px] rounded-full transition-all duration-300 ${
-                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
-              } ${mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"}`}
+              className={`block h-[2px] rounded-full bg-cream transition-all duration-300 ${
+                mobileOpen ? "w-0 opacity-0" : "w-5 opacity-100"
+              }`}
             />
             <span
-              className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
-                mobileOpen || scrolled ? "bg-foreground" : "bg-cream"
-              } ${mobileOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+              className={`block h-[2px] w-5 rounded-full bg-cream transition-all duration-300 ${
+                mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
             />
           </button>
         </div>
