@@ -16,13 +16,12 @@ const columns = [
       { label: "Sobre nós", href: "#" },
       { label: "Corpo médico", href: "#" },
       { label: "Resultados", href: "#resultados" },
-      { label: "Depoimentos", href: "#depoimentos" },
     ],
   },
   {
     title: "Recursos",
     links: [
-      { label: "Perguntas frequentes", href: "#faq" },
+      { label: "Perguntas frequentes", href: "#jornada" },
       { label: "Blog tricológico", href: "#" },
       { label: "Imprensa", href: "#" },
       { label: "Contato", href: "#contato" },
