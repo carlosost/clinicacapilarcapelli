@@ -46,7 +46,7 @@ export function ContactForm() {
   return (
     <section
       id="contato"
-      className="relative overflow-hidden bg-primary text-primary-foreground md:h-screen md:snap-start md:flex md:flex-col md:justify-center"
+      className="relative overflow-hidden bg-primary text-primary-foreground"
     >
       {/* Decorative gradients */}
       <div className="pointer-events-none absolute inset-0 opacity-30">
