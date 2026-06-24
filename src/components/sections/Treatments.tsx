@@ -87,7 +87,7 @@ export function Treatments() {
   const [selected, setSelected] = useState<Treatment | null>(null);
 
   return (
-    <section id="tratamentos" className="bg-white py-24 lg:py-32 md:h-screen md:snap-start md:flex md:flex-col md:justify-center md:overflow-hidden">
+    <section id="tratamentos" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
