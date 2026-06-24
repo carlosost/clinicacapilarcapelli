@@ -6,6 +6,11 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Raise Node's default EventEmitter listener cap (10) to silence the
+// MaxListenersExceededWarning that can fire during dev-mode HMR/restarts.
+// Not a plugin addition — safe alongside the managed preset above.
+process.setMaxListeners(20);
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).

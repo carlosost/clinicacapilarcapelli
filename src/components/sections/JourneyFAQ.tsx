@@ -120,7 +120,7 @@ export function JourneyFAQ() {
   const current = phases[active];
 
   return (
-    <section id="jornada" className="bg-cream pt-16 pb-8 lg:pt-20 lg:pb-10">
+    <section id="jornada" className="bg-cream pt-6 pb-8 lg:pt-8 lg:pb-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold tracking-[0.2em] text-olive uppercase">
