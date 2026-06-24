@@ -101,7 +101,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
   return (
     <div
       ref={containerRef}
-      className="relative aspect-square w-full select-none overflow-hidden rounded-2xl bg-graphite shadow-[0_20px_60px_-20px_rgba(30,58,43,0.35)] lg:aspect-[4/3] [touch-action:pan-y]"
+      className="relative aspect-[4/3] w-full select-none overflow-hidden rounded-2xl bg-graphite shadow-[0_20px_60px_-20px_rgba(30,58,43,0.35)] lg:aspect-[16/9] [touch-action:pan-y]"
       onMouseDown={(e) => {
         draggingRef.current = true;
         updateFromClientX(e.clientX);
@@ -178,29 +178,22 @@ export function Results() {
   const current = cases[index];
 
   return (
-    <motion.section
-      id="resultados"
-      className="bg-cream pt-28 pb-16 lg:pt-36 lg:pb-20"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <section id="resultados" className="bg-cream pt-6 pb-10 lg:pt-8 lg:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold tracking-[0.2em] text-olive uppercase">
             Resultados Reais
           </span>
-          <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-graphite sm:text-5xl">
+          <h2 className="mt-3 font-display text-4xl font-bold leading-tight tracking-tight text-graphite sm:text-5xl">
             A diferença que a <span className="text-olive">ciência</span> faz
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Navegue entre casos reais e arraste o controle das imagens para comparar o antes e o depois.
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative mt-14">
+        <div className="relative mt-6">
           {/* Arrows */}
           <button
             type="button"
@@ -232,16 +225,16 @@ export function Results() {
               >
                 <BeforeAfterSlider before={current.before} after={current.after} />
 
-                <div className="rounded-2xl border border-border bg-white p-8 shadow-sm">
+                <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
                   <span className="inline-flex items-center rounded-full bg-olive/10 px-3 py-1 text-xs font-semibold tracking-wider text-olive uppercase">
                     {current.code}
                   </span>
-                  <h3 className="mt-4 font-display text-2xl font-bold leading-tight tracking-tight text-graphite">
+                  <h3 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-graphite">
                     {current.patient}, {current.age} anos
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">{current.gender}</p>
 
-                  <dl className="mt-6 space-y-4 text-sm">
+                  <dl className="mt-4 space-y-3 text-sm">
                     <div className="flex items-baseline justify-between gap-4 border-b border-border/60 pb-3">
                       <dt className="text-muted-foreground">Diagnóstico</dt>
                       <dd className="text-right font-medium text-graphite">{current.diagnosis}</dd>
@@ -262,7 +255,7 @@ export function Results() {
                     </div>
                   </dl>
 
-                  <div className="mt-8 rounded-xl bg-cream p-5">
+                  <div className="mt-5 rounded-xl bg-cream p-5">
                     <p className="font-display text-sm italic leading-relaxed text-graphite-light">
                       “{current.quote}”
                     </p>
@@ -276,7 +269,7 @@ export function Results() {
           </div>
 
           {/* Mobile arrows + dots */}
-          <div className="mt-10 flex items-center justify-center gap-6">
+          <div className="mt-5 flex items-center justify-center gap-6">
             <button
               type="button"
               onClick={() => go(-1)}
@@ -314,6 +307,6 @@ export function Results() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
