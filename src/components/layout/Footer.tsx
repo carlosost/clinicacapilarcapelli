@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Linkedin, MapPin, Clock, Phone, Mail } from "lucide-react";
+import { Instagram, MapPin, Clock, Phone, Mail } from "lucide-react";
 
 const columns = [
   {
@@ -13,17 +13,14 @@ const columns = [
   {
     title: "A Clínica",
     links: [
-      { label: "Sobre nós", href: "#" },
-      { label: "Corpo médico", href: "#" },
       { label: "Resultados", href: "#resultados" },
+      { label: "Unidades", href: "#unidades" },
     ],
   },
   {
     title: "Recursos",
     links: [
       { label: "Perguntas frequentes", href: "#jornada" },
-      { label: "Blog tricológico", href: "#" },
-      { label: "Imprensa", href: "#" },
       { label: "Contato", href: "#contato" },
     ],
   },
@@ -135,29 +132,22 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 border-t border-border py-8 sm:flex-row">
           <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">
             Copyright © 2026 Clínica Cappelli. Todos os direitos reservados. Cappelli Transplante Ltda | CNPJ 45.279.669/0001-00.{" "}
-            <a href="#" className="underline-offset-4 hover:text-olive hover:underline">Termos de Uso</a>
+            Termos de Uso
             <span className="mx-1.5 text-border">·</span>
-            <a href="#" className="underline-offset-4 hover:text-olive hover:underline">Políticas de Privacidade</a>.{" "}
+            Políticas de Privacidade.{" "}
             Imagens e conteúdos estritamente informativos em conformidade com as normas do CFM.
           </p>
 
           <div className="flex items-center gap-2">
-            {[
-              { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/clinicacappelli/" },
-              { icon: Youtube, label: "YouTube", href: "#" },
-              { icon: Linkedin, label: "LinkedIn", href: "#" },
-            ].map(({ icon: Icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-graphite-light transition-all duration-300 hover:-translate-y-0.5 hover:border-olive hover:text-olive"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/clinicacappelli/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-graphite-light transition-all duration-300 hover:-translate-y-0.5 hover:border-olive hover:text-olive"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>
