@@ -9,15 +9,6 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -31,13 +22,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 will-change-transform transition-all duration-300 ${
-        scrolled
-          ? "bg-graphite/85 backdrop-blur-md border-b border-white/10 shadow-[0_1px_12px_rgba(0,0,0,0.35)]"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-graphite/85 backdrop-blur-md border-b border-white/10 shadow-[0_1px_12px_rgba(0,0,0,0.35)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
           {/* Logo */}
