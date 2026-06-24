@@ -205,9 +205,6 @@ export function Hero() {
         ctx.fill();
       }
 
-      // Decay da velocidade extra do scroll
-      speedRef.current += (1 - speedRef.current) * 0.04;
-
       raf = requestAnimationFrame(draw);
     };
 
@@ -219,25 +216,9 @@ export function Hero() {
     };
     window.addEventListener("resize", onResize);
 
-    // Scroll boost — acelera o fluxo conforme o usuário rola
-    let lastScroll = window.scrollY;
-    let scrollTimeout: number | null = null;
-    const onScroll = () => {
-      const dy = Math.abs(window.scrollY - lastScroll);
-      lastScroll = window.scrollY;
-      speedRef.current = Math.min(2.4, speedRef.current + dy * 0.012);
-      if (scrollTimeout) window.clearTimeout(scrollTimeout);
-      scrollTimeout = window.setTimeout(() => {
-        speedRef.current = 1;
-      }, 800);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("scroll", onScroll);
-      if (scrollTimeout) window.clearTimeout(scrollTimeout);
     };
   }, []);
 
