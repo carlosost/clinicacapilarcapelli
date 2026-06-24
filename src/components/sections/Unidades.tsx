@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MapPin, MessageCircle, ArrowRight } from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const units = [
   {
@@ -42,18 +41,12 @@ const units = [
 ];
 
 export function Unidades() {
-  const { ref, isVisible } = useScrollReveal(0.12);
   const [activeId, setActiveId] = useState(units[0].id);
   const active = units.find((u) => u.id === activeId)!;
 
   return (
     <section id="unidades" className="bg-white py-20 sm:py-28">
-      <div
-        ref={ref}
-        className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-700 ease-out ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        }`}
-      >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           {/* LEFT — Minimal Tab Menu */}
           <div className="flex flex-col">
